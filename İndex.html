@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ömər Level Up 🎮</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top, #0f2027, #000);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 30px 20px;
+}
+
+h1 {
+  font-size: 2.6em;
+  font-weight: 800;
+  text-shadow: 0 0 25px #00ffcc;
+  animation: glow 2s infinite alternate;
+}
+
+.level-box {
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.12);
+  max-width: 320px;
+  box-shadow: 0 0 30px rgba(0,255,204,0.4);
+}
+
+.level {
+  font-size: 2.2em;
+  font-weight: 800;
+  margin: 10px 0;
+}
+
+.arrow {
+  font-size: 2em;
+  animation: bounce 1.2s infinite;
+}
+
+.new-level {
+  color: #00ffcc;
+  text-shadow: 0 0 20px #00ffcc;
+}
+
+.slider {
+  margin: 30px auto;
+  max-width: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.slider img {
+  width: 100%;
+  display: none;
+}
+
+.slider img.active {
+  display: block;
+}
+
+.card {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+  padding: 25px;
+  margin-top: 25px;
+}
+
+.button {
+  margin-top: 30px;
+  padding: 16px 35px;
+  background: linear-gradient(45deg, #00ffcc, #00ffaa);
+  color: black;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 1.1em;
+  border: none;
+  box-shadow: 0 0 25px #00ffcc;
+}
+
+.footer {
+  margin-top: 40px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #00ffcc; }
+  to { text-shadow: 0 0 35px #00ffcc; }
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 MUSIQI -->
+<audio autoplay loop>
+  <source src="https://assets.mixkit.co/music/preview/mixkit-game-level-completed-2059.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 🎆 KONFETİ -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<div class="container">
+  <h1>🎉 Ad Günün Mübarək Ömər 🎉</h1>
+
+  <!-- 🎮 LEVEL UP -->
+  <div class="level-box">
+    <div class="level">LEVEL 13</div>
+    <div class="arrow">⬇️</div>
+    <div class="level new-level">LEVEL 14 🔥</div>
+    <p>Yeni level açıldı!</p>
+  </div>
+
+  <!-- 📸 ŞƏKİLLƏR -->
+  <div class="slider">
+    <img src="omer1.jpg" class="active">
+    <img src="omer2.jpg">
+    <img src="omer3.jpg">
+  </div>
+
+  <div class="card">
+    <p>🎮 Yeni bacarıqlar unlocked</p>
+    <p>⚽ Oyun + real həyat XP artırıldı</p>
+    <p>🔥 Güc + sürət + ağıl upgrade olundu</p>
+    <p>🚀 Qarşıda səni böyük uğurlar gözləyir</p>
+  </div>
+
+  <button class="button" onclick="surpriz()">🎁 LEVEL UP SÜRPRİZİ</button>
+
+  <div class="footer">
+    💙 Bu sürpriz sənə özəl hazırlandı<br>
+    📅 31 Dekabr
+  </div>
+</div>
+
+<script>
+let index = 0;
+const images = document.querySelectorAll('.slider img');
+setInterval(() => {
+  images[index].classList.remove('active');
+  index = (index + 1) % images.length;
+  images[index].classList.add('active');
+}, 2500);
+
+function surpriz() {
+  confetti({
+    particleCount: 400,
+    spread: 140,
+    startVelocity: 45
+  });
+
+  alert(
+`🎮 LEVEL UP UĞURLU!
+
+Ömər, artıq LEVEL 14-dəsən 🔥
+Daha güclü, daha ağıllı və daha iddialı!
+
+Unutma:
+Hər oyunda qalib olmaq olar,
+amma real həyatda da SƏN QALİB OLACAQSAN 💪
+
+Ad günün mübarək qardaşım ❤️
+— Hüseyn`
+  );
+}
+</script>
+
+</body>
+      </html>
